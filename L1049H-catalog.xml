@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PropertyList>
+  <version n="0">2020.3.*</version>
+  <id>com.github.users.puku-777</id>
+  <name>Lockheed 1049H Super Duper Constellation</name>
+  <description>Lockheed 1049H continuation by TOASTER</description>
+  <package>
+    <name>Lockheed 1049H Super Duper Constellation</name>
+    <status></status>
+    <author>Gary Neely, Marc Kraus, Ludovic Brenta, Richard Senior, TOASTER, pinto, Josh Davidson</author>
+    <description>
+      The pinnacle of piston engine techology and of pure beauty.  The
+      last airliner of the Golden Age, before the jet age and before
+      mass tourism.  Welcome back to the Fifties.
+    </description>
+    <rating>
+    <FDM type="int">4</FDM><systems type="int">3</systems><cockpit type="int">4</cockpit><model type="int">4</model></rating>
+    <id>Lockheed1049h</id>
+    <variant>
+      <id>Lockheed1049h-engineer</id>
+      <name>Lockheed 1049H Engineer</name>
+      <description>
+      This allows you to take the seat of the flight engineer aboard a
+      Lockheed 1049H Super Constellation flown by another pilot over
+      the multiplayer network.  Start in a location near the aircraft
+      then go to the Constellation menu and "Select MP-Pilot" to climb
+      on board.  The pilot must similarly select the engineer.  This
+      allows the engineer to control throttle, mixture, superchargers,
+      fuel, etc.
+    </description>
+      <author>Gary Neely, Marc Kraus, Ludovic Brenta, Richard Senior, TOASTER, pinto, Josh Davidson</author>
+      <variant-of>Lockheed1049h</variant-of>
+      <!--preview>
+        <type>panel</type>
+        <url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/previews/Lockheed1049h_Previews/preview.png</url>
+        <path>Previews/preview.png</path>
+      </preview>
+      <preview>
+        <type>panel</type>
+        <url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/previews/Lockheed1049h_Previews/cockpit.png</url>
+        <path>Previews/cockpit.png</path>
+      </preview-->
+      <tag>1950s</tag>
+      <tag>4-engine</tag>
+      <tag>cargo</tag>
+      <tag>dual-controls</tag>
+      <tag>golden-age</tag>
+      <tag>ifr</tag>
+      <tag>lockheed</tag>
+      <tag>passenger</tag>
+      <tag>piston</tag>
+      <tag>pressurised</tag>
+      <tag>propeller</tag>
+      <tag>radial</tag>
+      <tag>retractable-gear</tag>
+      <tag>turbocharged</tag>
+      <author>Gary Neely, Marc Kraus, Ludovic Brenta, Richard Senior</author>
+    </variant>
+    <dir>Lockheed1049h</dir>
+    <url>https://github.com/puku-777/Lockheed1049h/releases/download/2021-07-24/Lockheed1049h-2021-07-24.zip</url>
+    <!--url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/Lockheed1049h.zip</url>
+    <url>http://ukmirror.flightgear.org/fgaddon/Aircraft-2020/Lockheed1049h.zip</url>
+    <url>https://cdn.merspieler.tk/fgaddon/Aircraft-2020/Lockheed1049h.zip</url>
+    <thumbnail>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/thumbnails/Lockheed1049h_thumbnail.jpg</thumbnail>
+    <thumbnail-path>thumbnail.jpg</thumbnail-path>
+    <preview>
+      <type>panel</type>
+      <url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/previews/Lockheed1049h_Previews/preview.png</url>
+      <path>Previews/preview.png</path>
+    </preview>
+    <preview>
+      <type>panel</type>
+      <url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/previews/Lockheed1049h_Previews/cockpit.png</url>
+      <path>Previews/cockpit.png</path>
+    </preview-->
+    <tag>1950s</tag>
+    <tag>4-engine</tag>
+    <tag>cargo</tag>
+    <tag>dual-controls</tag>
+    <tag>golden-age</tag>
+    <tag>ifr</tag>
+    <tag>lockheed</tag>
+    <tag>passenger</tag>
+    <tag>piston</tag>
+    <tag>pressurised</tag>
+    <tag>propeller</tag>
+    <tag>radial</tag>
+    <tag>retractable-gear</tag>
+    <tag>turbocharged</tag>
+    <revision>2021-07-24</revision>
+    <md5>588ac80ea3fff6bba4c1a7dfdcebec80</md5>
+    <file-size-bytes>12187575</file-size-bytes>
+  </package>
