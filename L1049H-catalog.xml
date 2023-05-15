@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <PropertyList>
   <version n="0">2020.3.*</version>
-  <id>com.github.users.puku-777</id>
+  <id>com.github.users.mtkft</id>
   <name>Lockheed 1049H Super Duper Constellation</name>
   <description>Lockheed 1049H continuation by TOASTER</description>
   <package>
@@ -57,7 +57,7 @@
       <author>Gary Neely, Marc Kraus, Ludovic Brenta, Richard Senior</author>
     </variant>
     <dir>Lockheed1049h</dir>
-    <url>https://github.com/puku-777/Lockheed1049h/releases/download/2021-07-24/Lockheed1049h-2021-07-24.zip</url>
+    <url>https://github.com/mtkft/Lockheed1049h/releases/download/2021-07-24/Lockheed1049h-2021-07-24.zip</url>
     <!--url>http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2020/Lockheed1049h.zip</url>
     <url>http://ukmirror.flightgear.org/fgaddon/Aircraft-2020/Lockheed1049h.zip</url>
     <url>https://cdn.merspieler.tk/fgaddon/Aircraft-2020/Lockheed1049h.zip</url>
