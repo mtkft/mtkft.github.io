@@ -1,6 +1,5 @@
 footer {
-    position: fixed;
-    left: 0;
+    position: sticky;
     bottom: 0;
     width: 100%;
     text-align: center;
