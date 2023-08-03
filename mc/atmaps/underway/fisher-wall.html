@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+<script>
+  function showme(me)
+  {
+    me.setAttribute("display","inline")
+  }
+  function hideme(me)
+  {
+    me.setAttribute("display","none")
+  }
+  hideme(level1);
+  showme(level0);
+  hideme(levelm1);
+</script>
+
+<form>
+  <input type="button" onclick="showme(level1);hideme(level0);hideme(levelm1)" value="Level 1">
+  <input type="button" onclick="hideme(level1);showme(level0);hideme(levelm1)" value="Level 0">
+  <input type="button" onclick="hideme(level1);hideme(level0);showme(levelm1)" value="Level -1">
+</form>
 
 <svg
    width="1168"
@@ -114,7 +133,6 @@
   <g
      id="levelm1"
      transform="translate(-5.2917237,-214.84158)"
-     style="display:inline">
     <path
        style="display:inline;fill:#cccccc;fill-opacity:1;stroke-width:3.77953"
        d="m 160,376 h -4 v -4 h -36 v -12 h 36 v -4 h 4 l 0.0205,-28.00002 h -20 v -12 L 156.02051,316 V 252 H 92.020526 v 48 h -12 v -60 h 28.000004 l -10e-6,-52.00002 h 12 l 10e-6,52.00007 103.99999,-3e-5 v -100 h -8 v 8 h -12 v -16 h 16 l 3e-5,-12.00024 h -16 V 75.999782 h 16 l -3e-5,-31.999759 h -64 V 2.4188977e-5 h 12 V 32.000024 H 236.0205 V 252.00002 h -60 v 64 l 16.00002,-4e-5 1e-5,12.00007 -20,-5e-5 -1e-5,63.99998 h -12 z"
@@ -1077,7 +1095,6 @@
   </g>
   <g
      id="level0"
-     style="display:inline"
      transform="translate(31.749943,2.645833)">
     <path
        id="path3007"
@@ -2411,7 +2428,6 @@
   </g>
   <g
      id="level1"
-     style="display:inline"
      transform="translate(0,2.116666)">
     <path
        style="fill:#cccccc;stroke-width:0.35"
@@ -2745,23 +2761,3 @@
     </g>
   </g>
 </svg>
-
-
-<form>
-  <input type="button" onclick="showme(level1);hideme(level0);hideme(levelm1)" value="Level 1">
-  <input type="button" onclick="hideme(level1);showme(level0);hideme(levelm1)" value="Level 0">
-  <input type="button" onclick="hideme(level1);hideme(level0);showme(levelm1)" value="Level -1">
-</form>
-<script>
-  function showme(me)
-  {
-    me.setAttribute("display","inline")
-  }
-  function hideme(me)
-  {
-    me.setAttribute("display","none")
-  }
-  hideme(level1);
-  showme(level0);
-  hideme(levelm1);
-</script>
