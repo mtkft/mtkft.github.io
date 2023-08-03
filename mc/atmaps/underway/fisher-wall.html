@@ -2314,14 +2314,15 @@
   <input type="button" onclick="showme(level0);hideme(levelm1)" value="Level 0">
   <input type="button" onclick="showme(levelm1);hideme(level0)" value="Level -1">
 </form>
-<script id=myScript>
+<script>
 function showme(me)
 {
   me.setAttribute("display","inline")
 }
-</script><script>
 function hideme(me)
 {
   me.setAttribute("display","none")
 }
+showme(level0);
+hideme(levelm1);
 </script>
