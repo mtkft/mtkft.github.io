@@ -5,19 +5,20 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mtkft.github.io/mc/ttcs.html">
   <meta property="og:title" content="Minecraft: LTA handbook for TrainCarts">
-  <meta property="og:description" content="version 4a">
+  <meta property="og:description" content="version 5">
   <meta property="og:image" content="https://mtkft.github.io/assets/mt600.png">
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ttcs v4a</title>
+  <title>ttcs v5</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <link rel="stylesheet" href="assets/basic.css">
 </head>
 <header><a href="index"><<< Back to home</a></header>
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="toasters-traincarts-suite">Toaster’s Traincarts Suite</h1>
-<p><em>For use in multiplayer Minecraft in Lexawaken Transportation Authority regional rail and tram territory</em></p>
+  <div class="stackedit__html"><h1 id="toasters-traincarts-suite">Toaster’s TrainCarts Suite</h1>
+<p><em>For use in multiplayer Minecraft in Lexawaken Transportation Authority regional rail and tram territory.</em><br>
+<em>Version 5 has moved to using decimeters per tick as the primary discussed unit of speed. They are scaled by one decimal place from TrainCarts’s native blocks per tick to roll off the tongue easier (and the railroad’s sign shop) and to better capture how fast it feels like a train goes over a multiplayer Minecraft world.</em></p>
 <h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#hit-the-bricks">Hit the Bricks</a></li>
@@ -47,7 +48,7 @@ yourtrainclass
 <li>Criss cross!</li>
 <li>Everybody clap your hands!</li>
 </ul>
-<p>The spawn directions are with reference to the attached side of the sign, and the sign is assumed perpendicular to the track (text facing sideways or abeam the tracks)<br>
+<p>The spawn directions are with reference to the attached side of the sign, and the sign is assumed perpendicular to the track (text facing sideways or abeam the tracks). Some terminal situations may warrant a speed other than 2.5 dm/t for spawning and spotting.<br>
 On one or more train classes’ spawners, you may wish to employ an <code>!</code> in the sign powered setting to cause the sign to trigger on a redstone low instead of a high. This allows locking-out of the HTB system on a train-class basis if the station is to gain or lose express service flexibly.</p>
 <h2 id="empty-train-culling-system">Empty Train Culling System</h2>
 <p>Not your typical <a href="https://en.wikipedia.org/wiki/European_Train_Control_System">ETCS</a>…</p>
@@ -97,6 +98,13 @@ yourtargetspeed
 <p><code>yourparameter</code> may take on <code>0.5Gb</code>, <code>0.5G</code>, or <code>yourdistancetorun</code> to set acceleration as Bézier, linear, and linear from distance-to-run, respectively. Furthermore, <code>0.5G</code> is replaceable with whatever standard rate you choose.</p>
 </li>
 <li>
+<p>Speed change on bidirectional track<br>
+As if you were putting down a speed board and painting onto both sides, put each of the acceleration/deceleration directives next to one another on the side a train should obey them <em>from</em>. Then, put the following to either side:</p>
+<pre><code>[+train]
+skip 1 2
+</code></pre>
+</li>
+<li>
 <p>Station stop marker with limited acceleration</p>
 <pre><code>[+train]
 station yourdistancetorun
@@ -130,7 +138,7 @@ After a station stop marker and within about one or two train lengths, add a gen
 <thead>
 <tr>
 <th>Situation</th>
-<th>m/t</th>
+<th>dm/t</th>
 <th>m/s</th>
 <th>km/h</th>
 <th>mph</th>
@@ -139,63 +147,70 @@ After a station stop marker and within about one or two train lengths, add a gen
 <tbody>
 <tr>
 <td>Really crunchy turnouts, esp. trams</td>
-<td>0.1</td>
+<td>1</td>
 <td>2.0</td>
 <td>7.2</td>
 <td>4.5</td>
 </tr>
 <tr>
 <td>Spicy turnouts, esp. trams</td>
-<td>0.25</td>
+<td>2.5</td>
 <td>5.0</td>
 <td>18.0</td>
 <td>11.2</td>
 </tr>
 <tr>
 <td>Street and station running, slow</td>
-<td>0.4</td>
+<td>4</td>
 <td>8.0</td>
 <td>28.8</td>
 <td>17.9</td>
 </tr>
 <tr>
 <td>Street and station running, moderate</td>
-<td>0.5</td>
+<td>5</td>
 <td>10.0</td>
 <td>36.0</td>
 <td>22.4</td>
 </tr>
 <tr>
 <td>Street or dedicated running, moderate</td>
-<td>0.7</td>
+<td>7</td>
 <td>14.0</td>
 <td>50.4</td>
 <td>31.3</td>
 </tr>
 <tr>
 <td>Street or dedicated running, nyooming</td>
-<td>1.1</td>
+<td>11</td>
 <td>22.0</td>
 <td>79.2</td>
 <td>49.2</td>
 </tr>
 <tr>
+<td>FRA class 3/4</td>
+<td>13</td>
+<td>26.0</td>
+<td>93.6</td>
+<td>58.2</td>
+</tr>
+<tr>
 <td>FRA class 4/5</td>
-<td>1.8</td>
+<td>18</td>
 <td>36.0</td>
 <td>129.6</td>
 <td>80.5</td>
 </tr>
 <tr>
 <td>FRA class 6*</td>
-<td>2.2</td>
+<td>22</td>
 <td>44.0</td>
 <td>158.4</td>
 <td>98.4</td>
 </tr>
 <tr>
 <td>FRA class 7, emerging High Speed**</td>
-<td>2.8</td>
+<td>28</td>
 <td>56.0</td>
 <td>201.6</td>
 <td>125.3</td>
@@ -203,249 +218,305 @@ After a station stop marker and within about one or two train lengths, add a gen
 <tr>
 <td><em>Conversion factors</em></td>
 <td><em>x</em></td>
-<td><em>20x</em></td>
-<td><em>72x</em></td>
+<td><em>2x</em></td>
+<td><em>7.2x</em></td>
 <td><em>***</em></td>
 </tr>
 </tbody>
 </table><p>* Chunk loading may suffer on lower-end servers<br>
 ** Chunk loading will absolutely suffer on lower-end servers<br>
-***<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>72</mn><mi>x</mi></mrow><mrow><mn>1.609344</mn><mtext>&nbsp;km/mi</mtext></mrow></mfrac><mo>≈</mo><mn>44.739</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">\frac{72x}{1.609344~\text{km/mi}}\approx44.739x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1.36511em; vertical-align: -0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.845108em;"><span class="" style="top: -2.655em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.609344</span><span class="mspace nobreak mtight"><span class="mtight">&nbsp;</span></span><span class="mord text mtight"><span class="mord mtight">km/mi</span></span></span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.394em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">72</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.52em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">44.739</span><span class="mord mathnormal">x</span></span></span></span></span></p>
+***<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>7.2</mn><mi>x</mi></mrow><mrow><mn>1.609344</mn><mtext>&nbsp;km/mi</mtext></mrow></mfrac><mo>≈</mo><mn>4.4739</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">\frac{7.2x}{1.609344~\text{km/mi}}\approx4.4739x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1.36511em; vertical-align: -0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.845108em;"><span class="" style="top: -2.655em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.609344</span><span class="mspace nobreak mtight"><span class="mtight">&nbsp;</span></span><span class="mord text mtight"><span class="mord mtight">km/mi</span></span></span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.394em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">7.2</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.52em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">4.4739</span><span class="mord mathnormal">x</span></span></span></span></span></p>
+<p>You may find that 10 dm/t equals 72kph or just short of 45mph, or Limited speed under NORAC rules.</p>
 <h3 id="table-2-predetermined-whole-number-distances-to-run-for-speed-changes">Table 2: Predetermined whole-number distances to run for speed changes</h3>
 
 <table>
 <thead>
 <tr>
-<th>Greater speed <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal">u</span></span></span></span></span> (m/t)</th>
-<th>Lesser speed <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span></span></span></span></span> (m/t)</th>
+<th>Greater speed <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal">u</span></span></span></span></span> (dm/t)</th>
+<th>Lesser speed <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span></span></span></span></span> (dm/t)</th>
 <th>Distance to run at <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0.5</mn><mi>G</mi><mo>=</mo><mn>4.9</mn><msup><mtext>m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a=0.5G=4.9\text{m/s}^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">0.5</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1.20401em; vertical-align: -0.25em;"></span><span class="mord">4.9</span><span class="mord"><span class="mord text"><span class="mord">m/s</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.954008em;"><span class="" style="top: -3.2029em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span> (m)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2.8</td>
-<td>2.2</td>
+<td>28</td>
+<td>22</td>
 <td>122</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>1.8</td>
+<td>28</td>
+<td>18</td>
 <td>188</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>1.1</td>
-<td>270</td>
+<td>28</td>
+<td>13</td>
+<td>251</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>0.7</td>
+<td>28</td>
+<td>11</td>
+<td>271</td>
+</tr>
+<tr>
+<td>28</td>
+<td>7</td>
 <td>300</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>0.5</td>
+<td>28</td>
+<td>5</td>
 <td>310</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>0.4</td>
-<td>314</td>
+<td>28</td>
+<td>4</td>
+<td>313</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>0.25</td>
+<td>28</td>
+<td>2.5</td>
 <td>317</td>
 </tr>
 <tr>
-<td>2.8</td>
-<td>0.1</td>
+<td>28</td>
+<td>1</td>
 <td>320</td>
 </tr>
 <tr>
-<td>2.8</td>
+<td>28</td>
 <td>0</td>
 <td>320</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>1.8</td>
+<td>22</td>
+<td>18</td>
 <td>65</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>1.1</td>
+<td>22</td>
+<td>13</td>
+<td>129</td>
+</tr>
+<tr>
+<td>22</td>
+<td>11</td>
 <td>148</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>0.7</td>
+<td>22</td>
+<td>7</td>
 <td>178</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>0.5</td>
+<td>22</td>
+<td>5</td>
 <td>187</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>0.4</td>
+<td>22</td>
+<td>4</td>
 <td>191</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>0.25</td>
+<td>22</td>
+<td>2.5</td>
 <td>195</td>
 </tr>
 <tr>
-<td>2.2</td>
-<td>0.1</td>
+<td>22</td>
+<td>1</td>
 <td>197</td>
 </tr>
 <tr>
-<td>2.2</td>
+<td>22</td>
 <td>0</td>
 <td>198</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>1.1</td>
+<td>18</td>
+<td>13</td>
+<td>63</td>
+</tr>
+<tr>
+<td>18</td>
+<td>11</td>
 <td>83</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>0.7</td>
+<td>18</td>
+<td>7</td>
 <td>112</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>0.5</td>
+<td>18</td>
+<td>5</td>
 <td>122</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>0.4</td>
+<td>18</td>
+<td>4</td>
 <td>126</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>0.25</td>
+<td>18</td>
+<td>2.5</td>
 <td>130</td>
 </tr>
 <tr>
-<td>1.8</td>
-<td>0.1</td>
+<td>18</td>
+<td>1</td>
 <td>132</td>
 </tr>
 <tr>
-<td>1.8</td>
+<td>18</td>
 <td>0</td>
 <td>132</td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>0.7</td>
+<td>13</td>
+<td>11</td>
+<td>20</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7</td>
+<td>49</td>
+</tr>
+<tr>
+<td>13</td>
+<td>5</td>
+<td>59</td>
+</tr>
+<tr>
+<td>13</td>
+<td>4</td>
+<td>62</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2.5</td>
+<td>66</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1</td>
+<td>69</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0</td>
+<td>69</td>
+</tr>
+<tr>
+<td>11</td>
+<td>7</td>
 <td>29</td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>0.5</td>
+<td>11</td>
+<td>5</td>
 <td>39</td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>0.4</td>
+<td>11</td>
+<td>4</td>
 <td>43</td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>0.25</td>
+<td>11</td>
+<td>2.5</td>
 <td>47</td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>0.1</td>
+<td>11</td>
+<td>1</td>
 <td>49</td>
 </tr>
 <tr>
-<td>1.1</td>
+<td>11</td>
 <td>0</td>
 <td>49</td>
 </tr>
 <tr>
-<td>0.7</td>
-<td>0.5</td>
+<td>7</td>
+<td>5</td>
 <td>10</td>
 </tr>
 <tr>
-<td>0.7</td>
-<td>0.4</td>
-<td>14</td>
+<td>7</td>
+<td>4</td>
+<td>13</td>
 </tr>
 <tr>
-<td>0.7</td>
-<td>0.25</td>
-<td>18</td>
+<td>7</td>
+<td>2.5</td>
+<td>17</td>
 </tr>
 <tr>
-<td>0.7</td>
-<td>0.1</td>
+<td>7</td>
+<td>1</td>
 <td>20</td>
 </tr>
 <tr>
-<td>0.7</td>
+<td>7</td>
 <td>0</td>
 <td>20</td>
 </tr>
 <tr>
-<td>0.5</td>
-<td>0.4</td>
+<td>5</td>
+<td>4</td>
 <td>4</td>
 </tr>
 <tr>
-<td>0.5</td>
-<td>0.25</td>
+<td>5</td>
+<td>2.5</td>
 <td>8</td>
 </tr>
 <tr>
-<td>0.5</td>
+<td>5</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>5</td>
 <td>0</td>
 <td>10</td>
 </tr>
 <tr>
-<td>0.4</td>
-<td>0.25</td>
+<td>4</td>
+<td>2.5</td>
 <td>4</td>
 </tr>
 <tr>
-<td>0.4</td>
-<td>0.1</td>
+<td>4</td>
+<td>1</td>
 <td>6</td>
 </tr>
 <tr>
-<td>0.4</td>
+<td>4</td>
 <td>0</td>
 <td>7</td>
 </tr>
 <tr>
-<td>0.25</td>
-<td>0.1</td>
+<td>2.5</td>
+<td>1</td>
 <td>2</td>
 </tr>
 <tr>
-<td>0.25</td>
+<td>2.5</td>
 <td>0</td>
 <td>3</td>
 </tr>
 <tr>
-<td>0.1</td>
+<td>1</td>
 <td>0</td>
 <td>1</td>
 </tr>
 <tr>
 <td>Arbitrary <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal">u</span></span></span></span></span></td>
 <td>Arbitrary <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span></span></span></span></span></td>
-<td><span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>20</mn><mi>u</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>−</mo><mo stretchy="false">(</mo><mn>20</mn><mi>v</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>a</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">(20u)^2-(20v)^2=2a\Delta x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">20</span><span class="mord mathnormal">u</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">20</span><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">2</span><span class="mord mathnormal">a</span><span class="mord">Δ</span><span class="mord mathnormal">x</span></span></span></span></span></td>
+<td><span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>u</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><mi>a</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">2u^2-2v^2=a\cdot\Delta x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.897438em; vertical-align: -0.08333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.814108em; vertical-align: 0em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.44445em; vertical-align: 0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">Δ</span><span class="mord mathnormal">x</span></span></span></span></span></td>
 </tr>
 </tbody>
 </table></div>
