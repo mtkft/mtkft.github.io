@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mtkft.github.io/imptra/hfs">
+  <meta property="og:title" content="<em>Hot Fudge Sundae</em> transit map style guide">
+  <meta property="og:description" content="revision 0">
+  <meta property="og:image" content="https://mtkft.github.io/assets/mt600.png">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hot fudge sundae guide r0</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="hot-fudge-sundae-style-guide-r0"><em>Hot Fudge Sundae</em> style guide, r0</h1>
+<h2 id="i.-basis">I. Basis</h2>
+<p>I adopted the visual principles of BKK Budapesti Közlekedési Központ Tram+Rapid rail and Trolleybus network diagrams, which I refer to in shorthand as “178” and “183” respectively iaw their permalinks <a href="https://bkk.hu/downloads/178">https://bkk.hu/downloads/178</a> and <a href="https://bkk.hu/downloads/183">"/183</a>.</p>
+<p>My original approach<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> to reverse-engineering it involved simply using the ruler capability of a widespread PDF reader program. This felt unreliable and anyway, for my own personal comfort, I sought rounder numbers than what I was seeing, on <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>0.1</mn><mtext>&nbsp;mm</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(0.1~\text{mm})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathnormal" style="margin-right: 0.02778em;">O</span><span class="mopen">(</span><span class="mord">0.1</span><span class="mspace nobreak">&nbsp;</span><span class="mord text"><span class="mord">mm</span></span><span class="mclose">)</span></span></span></span></span>. As massaging these singular observations of the width of a given spline into a known standard set of round(er) numbers can in American English be called <em>fudging</em>, I felt inspired to develop a cuter and more memorable name based on the word <em>fudge</em>.</p>
+<p>Hence, <em>Hot Fudge Sundae!</em> An ice cream-based treat you’d find at a classic ice cream parlor <em>à l’américaine</em>, it got picked in party for lack of that many other cute things that use the word <em>fudge</em>.<br>
+…and maybe in some part I’m letting it keep the memory of too much ice cream for my own good up on the Castle Hill in Budapest. I miss the Ruszwurm and the № 7 already ;(</p>
+<h2 id="ii.-weights-and-stop-dots">II. “Weights” and stop dots</h2>
+<p>“Map 178” has three sizes of spline since at least 2021: the original “heavy” (think heavy rail as in the metro and interurbans) and “light” (think light rail as in the trams) widths and an extra thin (“X-thin”) one for the 100E and 200E airport routes and any M3 replacement buses, as appropriate at the time of each map revision.</p>
+<h3 id="heavy">Heavy</h3>
+<p>Use such 4.2mm “heavy” weight splines to represent railbound rapid transit and interurban/regional rail.</p>
+<p>On “178”, this is the size of Metro and HÉV (interurban) lines <mark style="background-color: #ffd800; font-weight: bold;">①</mark>--<mark style="background-color: #4ca22f; color: white; font-weight: bold;">④</mark> and <mark style="background-color: #821066; color: white; font-weight: bold;">⑤</mark>--<mark style="background-color: #ef677d; color: white; font-weight: bold;">⑨</mark> as well as the dashed MÁV railroad splines.</p>
+<p>Stop dots should be 4.2mm across (fill diameter) filled with the route color and stroked (over the fill) 0.4mm thick in background color. If you have a cute logo for your heavy route or routes, why not put it in the stop dot in background (negative) color?</p>
+<h3 id="light">Light</h3>
+<p>Use such 2.5mm “light” weight splines to represent railbound street transit (“LiGhT rAiL”, trams, cetera) or occasionally bus rapid transit. On “178”, this is the size of tram lines (including the rack railway up the side of Svábhegy and Széchényi-hegy, numbered as surface route <mark style="background-color: red; color: white; font-weight: bold;">&nbsp;60&nbsp;</mark>); this is also the weight used on “183” for all of those trackless trolley routes.</p>
+<p>I used this tier for some of the San Diego Metropolitan Transit System’s Rapid buses because I used the Heavy weight for the Trolley, the forthcoming Purple Line Metro, and the North County Transit District Coaster and Amtrak Pacific Surfliner. The idea with the Light tier on both “178/183” and on HFS-style maps made by me is therefore to assign Light to the “second class” of transit lines that are still rapid-transit-flavored—that is, something other than unimproved street bus lines or the case described just below.</p>
+<p>Stop dots should be 2.5mm across (fill diameter) filled with foreground color (terminus) or background color (intermediate or non-layover loop stop) and stroked (over the fill) 0.4mm thick in foreground color. Having a black stroke over a black fill (in traditional light theme; substitute with white in a dark theme context) may seem like an odd method, but it simplifies production of an intermediate stop dot and terminus dot at the same time: one must only change the fill color.</p>
+<h3 id="extra-thin">Extra Thin</h3>
+<p><em>Got two tiers of</em> <code>&lt;rail|rapid&gt;</code> <em>transit on your map and still need to squeeze in some buses? Those buses make a particularly important connection that your higher order modes don’t? Run on a highway? Try the new Extra Thin line weight today!~</em></p>
+<p>Further reverse-engineering of “178” after I developed the original standard led me to develop the “X-thin” weight as 1.5mm, or 60% of “Light”. The dots are also identical (but scale them too!) to the “Light” weight’s dots. On “178”, this is the size of the <mark style="background-color: #009fe3; color: white; font-weight: bold;">&nbsp;100E ✈ Airport Express&nbsp;</mark> and <mark style="background-color: #009fe3; color: white; font-weight: bold;">&nbsp;200E&nbsp;</mark> bus routes. I used this tier for SDMTS Rapid lines <mark style="background-color: #8929d5; color: white; font-weight: bold;">&nbsp;225&nbsp;</mark>, <mark style="background-color: #ff9a56; color: white; font-weight: bold;">&nbsp;235&nbsp;</mark>, <mark style="background-color: #d362a4; color: white; font-weight: bold;">&nbsp;280&nbsp;</mark>, <mark style="background-color: #a30262; color: white; font-weight: bold;">&nbsp;290&nbsp;</mark>, <mark style="background-color: red; color: white; font-weight: bold;">&nbsp;640&nbsp;</mark>, and <mark style="background-color: #0beff6; color: white; font-weight: bold;">&nbsp;880&nbsp;</mark>.</p>
+<h2 id="iii.-curves-and-spaces">III. Curves and spaces</h2>
+<p>Curves are generally circular arcs (no Euler spiral nor other form of easing) and are ruled by chord and parallel spacing, not by successive radii.</p>
+<p>Where a single spline changes direction (in 45-degree increments, of course), it will have a chord of 10mm over the arc between the two tangent segments. Where multiple splines curve in parallel (akin to a multitrack railroad curve) and remain parallel on both tangents, the spline of <em>second-tightest</em> curvature will have the 10mm basic chord and lead the rest: their nodes or handles marking the ends of the arc should be abeam those of the leader.<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup></p>
+<p>The following spacing rules apply to parallel splines, dots abeam a nearby crossing spline, and dots apart from each other. Measure all gaps from the center of a dot or from the center of a path at the appropriate “abeam point”.</p>
+
+<table>
+<thead>
+<tr>
+<th>Feature 1</th>
+<th>Feature 2</th>
+<th></th>
+<th>Spacing (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dot or spline [X-thin]</td>
+<td>Dot or spline [X-thin]</td>
+<td></td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>Dot or spline [X-thin]</td>
+<td>Dot or spline [light]</td>
+<td></td>
+<td>3.00</td>
+</tr>
+<tr>
+<td>Dot or spline [X-thin]</td>
+<td>Dot or spline [heavy]</td>
+<td></td>
+<td>3.80</td>
+</tr>
+<tr>
+<td>Dot or spline [light]</td>
+<td>Dot or spline [light]</td>
+<td></td>
+<td>3.50</td>
+</tr>
+<tr>
+<td>Dot or spline [light]</td>
+<td>Dot or spline [heavy]</td>
+<td></td>
+<td>4.35</td>
+</tr>
+<tr>
+<td>Dot or spline [heavy]</td>
+<td>Dot or spline [heavy]</td>
+<td></td>
+<td>5.20</td>
+</tr>
+<tr>
+<td>Dot near a curve [ANY SIZE]</td>
+<td>Tangent/curve transition node</td>
+<td></td>
+<td>3.50</td>
+</tr>
+</tbody>
+</table><p>Notice the pattern? Two half-widths plus one millimeter; all the relationships are defined by the gaps!</p>
+<p>There may come times when preserving the spacing rules described above will force new ad-hoc chords for particular curves. Just keep track of them with a “chord rule” (straight piece of Path) if you want to reuse the chord as a spacing rule for [an]other feature(s) nearby. I recommend retaining a carefully named set of chord rules for all those standard lengths as well, and to get very familiar with Guides and the numerical translate feature.</p>
+<h3 id="some-techniques-for-circular-curves-in-inkscape">Some techniques for circular curves in Inkscape</h3>
+<p><code>If you're good kids, I'll get some example images put together. Heck, the whole document kind of needs them, but this is just a pre-release so I have something to show for myself.</code></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>I fairly quickly superseded this method by loading the PDF in Inkscape with the Cairo/Poppler import capability, which let me inspect the thicknesses of splines and also their curve radii, but suffice it to say I did <em>not</em> like what I saw, so I elected to work off the findings of the original approach (keep reading above!). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Hint: snap some guides perpendicular to the spline at the leader’s nodes and make sure the followers’ nodes are on those guides (spaced appropriately). <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+</body>
+
+</html>
